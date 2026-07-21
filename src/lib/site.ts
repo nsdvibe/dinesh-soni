@@ -28,7 +28,7 @@ export const site = {
     secondaryCta: { label: "Watch Showreel", href: "/videos" },
     // Optional showreel video used by the hero "Watch Showreel" lightbox.
     // Use a YouTube/Vimeo URL or a local mp4 in /public/videos/.
-    showreelUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // ▸ REPLACE
+    showreelUrl: "https://www.youtube.com/watch?v=1iyCsIkyUNI",
   },
 
   // ── Showreel section (home) ───────────────────────────────────────────────
@@ -38,8 +38,8 @@ export const site = {
     description:
       "A ninety-second cut of the rooms, the crowds, and the nights that made them.",
     // Poster image behind the play button (drop a still into /public/images/)
-    poster: "/images/showreel-poster.jpg", // ▸ REPLACE
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // ▸ REPLACE
+    poster: "/images/showreel-poster.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=1iyCsIkyUNI",
   },
 
   // ── What I Do (home) ──────────────────────────────────────────────────────
@@ -183,19 +183,22 @@ export const site = {
     title: "Nights worth remembering",
     intro: "A look at the stages, crowds and moments. Filter by the kind of event.",
     // categories power the filter chips (order matters). "All" is added automatically.
-    categories: ["Weddings", "Corporate", "Concerts", "Award Nights", "Virtual"],
-    // ▸ REPLACE the `src` paths — drop photos into /public/images/portfolio/
-    // Aspect: "tall" | "wide" | "square" controls the masonry cell size.
+    categories: ["Weddings", "Corporate", "Concerts", "Award Nights"],
+    // Real event photos. Aspect: "tall" | "wide" | "square" controls the cell size
+    // (roughly matched to each photo's orientation for a clean masonry).
     items: [
-      { title: "Grand Sangeet Night", category: "Weddings", src: "/images/portfolio/p1.jpg", aspect: "tall" },
-      { title: "Annual Leadership Summit", category: "Corporate", src: "/images/portfolio/p2.jpg", aspect: "wide" },
-      { title: "Live in Concert", category: "Concerts", src: "/images/portfolio/p3.jpg", aspect: "square" },
-      { title: "National Excellence Awards", category: "Award Nights", src: "/images/portfolio/p4.jpg", aspect: "tall" },
-      { title: "Global Product Launch", category: "Corporate", src: "/images/portfolio/p5.jpg", aspect: "square" },
-      { title: "Beachside Wedding", category: "Weddings", src: "/images/portfolio/p6.jpg", aspect: "wide" },
-      { title: "Music Festival Main Stage", category: "Concerts", src: "/images/portfolio/p7.jpg", aspect: "tall" },
-      { title: "Virtual Town Hall", category: "Virtual", src: "/images/portfolio/p8.jpg", aspect: "square" },
-      { title: "Fashion Gala", category: "Award Nights", src: "/images/portfolio/p9.jpg", aspect: "wide" },
+      { title: "Sangeet floor, full throttle", category: "Weddings", src: "/images/portfolio/p1.jpg", aspect: "square" },
+      { title: "Confluence 2024", category: "Corporate", src: "/images/portfolio/p2.jpg", aspect: "wide" },
+      { title: "Command of the room", category: "Award Nights", src: "/images/portfolio/p3.jpg", aspect: "tall" },
+      { title: "Sharing the stage", category: "Concerts", src: "/images/portfolio/p4.jpg", aspect: "wide" },
+      { title: "Live and loud", category: "Concerts", src: "/images/portfolio/p5.jpg", aspect: "square" },
+      { title: "Getting the floor moving", category: "Weddings", src: "/images/portfolio/p6.jpg", aspect: "wide" },
+      { title: "Centre stage", category: "Award Nights", src: "/images/portfolio/p7.jpg", aspect: "tall" },
+      { title: "In the middle of it all", category: "Weddings", src: "/images/portfolio/p8.jpg", aspect: "square" },
+      { title: "Up close with the crowd", category: "Corporate", src: "/images/portfolio/p9.jpg", aspect: "wide" },
+      { title: "Between the moments", category: "Weddings", src: "/images/portfolio/p10.jpg", aspect: "square" },
+      { title: "On the mic, Confluence 2024", category: "Corporate", src: "/images/portfolio/p11.jpg", aspect: "wide" },
+      { title: "Every eye on the stage", category: "Concerts", src: "/images/portfolio/p12.jpg", aspect: "tall" },
     ],
   },
 
@@ -206,15 +209,17 @@ export const site = {
     intro:
       "Full performances, highlight reels and clips. Tap any thumbnail to play in the on-site theatre.",
     // Supports YouTube, Vimeo, and self-hosted mp4 (drop into /public/videos/).
-    // `type`: "youtube" | "vimeo" | "mp4". For mp4 also set `poster`.
+    // `type`: "youtube" | "vimeo" | "mp4". For mp4 also set a `poster`.
+    // ▸ ADD MORE: copy the block below with a new YouTube/Vimeo URL and a poster
+    //   image in /public/images/videos/. Set `category` to group them in filters.
     items: [
-      { title: "Signature Showreel 2025", type: "youtube", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", poster: "/images/videos/v1.jpg", category: "Showreel" },
-      { title: "Corporate Award Night", type: "youtube", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", poster: "/images/videos/v2.jpg", category: "Corporate" },
-      { title: "Concert Hosting Highlights", type: "vimeo", url: "https://vimeo.com/76979871", poster: "/images/videos/v3.jpg", category: "Concerts" },
-      { title: "Wedding Anchoring Moments", type: "youtube", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", poster: "/images/videos/v4.jpg", category: "Weddings" },
-      // Example of a self-hosted mp4 — put the file at /public/videos/sample.mp4
-      { title: "Behind the Mic", type: "mp4", url: "/videos/sample.mp4", poster: "/images/videos/v5.jpg", category: "Showreel" },
-      { title: "Voiceover Reel", type: "youtube", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", poster: "/images/videos/v6.jpg", category: "Voiceover" },
+      {
+        title: "Signature Showreel",
+        type: "youtube",
+        url: "https://www.youtube.com/watch?v=1iyCsIkyUNI",
+        poster: "/images/videos/showreel.jpg",
+        category: "Showreel",
+      },
     ],
   },
 
