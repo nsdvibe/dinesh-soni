@@ -358,7 +358,7 @@ export const site = {
     title: "Dinesh Soni — Anchor, Emcee, Artist & Writer",
     description:
       "Dinesh Soni is a professional anchor and emcee for weddings, corporate events, concerts and award nights — plus voiceover, scriptwriting and writing. Book a host who makes every stage come alive.",
-    url: "https://dineshsoni.web.app", // ▸ REPLACE once deployed
+    url: "https://dinesh-soni.web.app", // ▸ REPLACE with a custom domain later
     keywords: [
       "Dinesh Soni",
       "emcee",
