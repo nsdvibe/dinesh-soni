@@ -1,0 +1,37 @@
+rules_version = '2';
+
+// ============================================================================
+// Firestore security rules for the Dinesh Soni website.
+//
+//   enquiries — the contact/booking form writes here from the browser.
+//     • create : ALLOWED, but the payload is validated (shape + size limits)
+//                so the collection can't be abused as free storage.
+//     • read / update / delete : DENIED to all clients.
+//       View enquiries in the Firebase Console, or via the Admin SDK.
+// ============================================================================
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /enquiries/{id} {
+      allow read, update, delete: if false;
+
+      allow create: if isValidEnquiry(request.resource.data);
+    }
+
+    // Everything else is locked down by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+
+  function isValidEnquiry(d) {
+    return d.name is string && d.name.size() > 0 && d.name.size() <= 120
+      && d.email is string && d.email.size() <= 200 && d.email.matches('.+@.+\\..+')
+      && d.message is string && d.message.size() > 0 && d.message.size() <= 5000
+      && (!('phone' in d) || (d.phone is string && d.phone.size() <= 40))
+      && (!('eventType' in d) || (d.eventType is string && d.eventType.size() <= 80))
+      && (!('eventDate' in d) || (d.eventDate is string && d.eventDate.size() <= 40))
+      && (!('source' in d) || (d.source is string && d.source.size() <= 40))
+      && (!('userAgent' in d) || (d.userAgent is string && d.userAgent.size() <= 500));
+  }
+}
